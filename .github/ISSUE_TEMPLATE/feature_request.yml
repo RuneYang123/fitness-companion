@@ -1,0 +1,26 @@
+name: 改进建议
+description: 提出更自然的流程、教学补充或其他改进。
+title: "[建议] "
+body:
+  - type: markdown
+    attributes:
+      value: "说清使用场景即可，不需要公开个人健康资料或私人教练方案。"
+  - type: textarea
+    id: situation
+    attributes:
+      label: 遇到了什么不方便
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 希望怎样改
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: 可参考的资料
+      description: 如涉及动作或健康结论，可附原站链接和具体片段。
+    validations:
+      required: false

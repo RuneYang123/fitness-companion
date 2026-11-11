@@ -1,0 +1,5 @@
+interface:
+  display_name: "练得明白 · Fitness Companion"
+  short_description: "用自然中文安排训练、外卖饮食、补剂选择和睡眠恢复，支持手动反馈与调整"
+  icon_small: "./assets/fitness-companion-icon-v1.png"
+  icon_large: "./assets/fitness-companion-icon-v1.png"
