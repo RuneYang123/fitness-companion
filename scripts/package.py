@@ -18,7 +18,7 @@ SKILL = ROOT / 'skills' / 'fitness-companion'
 EXCLUDED = {'dist', '.git', '__pycache__', '.DS_Store'}
 ROOT_FILES = {'README.md', 'LICENSE', 'NOTICE.md', '.gitignore', 'CONTRIBUTING.md', 'CHANGELOG.md'}
 REPOSITORY_FILES = {
-    'docs/publishing.md', 'scripts/package.py', 'tests/test_package.py',
+    'docs/publishing.md', 'docs/fitness-companion-banner.svg', 'scripts/package.py', 'tests/test_package.py',
     '.github/ISSUE_TEMPLATE/bug_report.yml',
     '.github/ISSUE_TEMPLATE/feature_request.yml',
     '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/validate.yml',
@@ -30,6 +30,10 @@ CONTACT_EMAIL = 'runeyang123@outlook.com'
 
 def is_icon(path):
     return path == SKILL / 'assets' / 'fitness-companion-icon-v1.png'
+
+
+def is_banner(path):
+    return path == ROOT / 'docs' / 'fitness-companion-banner.svg'
 
 
 def sha256(data):
@@ -48,7 +52,7 @@ def public_files():
         if not p.is_file():
             continue
         approved = rel.as_posix() in ROOT_FILES | REPOSITORY_FILES or p.is_relative_to(SKILL)
-        if not approved or (len(rel.parts) > 1 and p.suffix not in ALLOWED_EXTENSIONS and p.name != 'LICENSE' and not is_icon(p)):
+        if not approved or (len(rel.parts) > 1 and p.suffix not in ALLOWED_EXTENSIONS and p.name != 'LICENSE' and not is_icon(p) and not is_banner(p)):
             errors.append(f'Unapproved release file: {rel}')
             continue
         if p.stat().st_size > 2_000_000:

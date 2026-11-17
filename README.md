@@ -8,6 +8,10 @@ Fitness Companion is a Chinese-language fitness skill for adults, tailoring trai
 
 [GitHub仓库](https://github.com/RuneYang123/fitness-companion) · [问题反馈](https://github.com/RuneYang123/fitness-companion/issues) · [联系作者](mailto:runeyang123@outlook.com)
 
+<p align="center">
+  <img src="docs/fitness-companion-banner.svg" alt="Fitness Companion 练得明白 动态展示图" width="100%">
+</p>
+
 **说清你的目标和条件，拿到一份能执行的清单；遇到具体问题，再展开讲。**
 
 适合成年人开始健身、减脂、增肌或兼顾两者。健身房和居家都可以，默认独自训练，没有教练陪同。计划按用户条件编排，不承诺固定时间内的体重或增肌幅度。

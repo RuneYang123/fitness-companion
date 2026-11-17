@@ -1,0 +1,356 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="100%" height="100%">
+  <defs>
+    <!-- Background & Card Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0FDF4" />
+      <stop offset="50%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#ECFDF5" />
+    </linearGradient>
+
+    <linearGradient id="brandGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A84F" />
+      <stop offset="100%" stop-color="#00873E" />
+    </linearGradient>
+
+    <linearGradient id="userBubbleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#009E49" />
+      <stop offset="100%" stop-color="#00803A" />
+    </linearGradient>
+
+    <linearGradient id="biliGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </linearGradient>
+
+    <linearGradient id="warmGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="100%" stop-color="#FEF3C7" />
+    </linearGradient>
+
+    <!-- Decorative Grid Pattern -->
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#10B981" fill-opacity="0.14" />
+    </pattern>
+  </defs>
+
+  <style>
+    .font-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+    .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* Icon Dumbbell Lift Animation */
+    .dumbbell-lift {
+      animation: liftRep 3s ease-in-out infinite;
+      transform-origin: 64px 66px;
+    }
+    @keyframes liftRep {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      40% { transform: translateY(-3px) rotate(-2deg); }
+      60% { transform: translateY(-3px) rotate(2deg); }
+    }
+
+    /* Pulse Dot */
+    .status-dot {
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    /* 15-Second 3-Scene Master Loop */
+    .scene-1 { animation: scene1Anim 15s infinite; }
+    .scene-2 { animation: scene2Anim 15s infinite; }
+    .scene-3 { animation: scene3Anim 15s infinite; }
+
+    @keyframes scene1Anim {
+      0% { opacity: 0; transform: translateY(8px); }
+      3%, 30% { opacity: 1; transform: translateY(0px); }
+      33.33%, 100% { opacity: 0; transform: translateY(-6px); }
+    }
+    @keyframes scene2Anim {
+      0%, 33.33% { opacity: 0; transform: translateY(8px); }
+      36.33%, 63.33% { opacity: 1; transform: translateY(0px); }
+      66.66%, 100% { opacity: 0; transform: translateY(-6px); }
+    }
+    @keyframes scene3Anim {
+      0%, 66.66% { opacity: 0; transform: translateY(8px); }
+      69.66%, 96.66% { opacity: 1; transform: translateY(0px); }
+      100% { opacity: 0; transform: translateY(-6px); }
+    }
+
+    /* Delayed Card Entrance per Scene */
+    .card-1 { animation: card1Anim 15s infinite; }
+    .card-2 { animation: card2Anim 15s infinite; }
+    .card-3 { animation: card3Anim 15s infinite; }
+
+    @keyframes card1Anim {
+      0%, 2.5% { opacity: 0; transform: translateY(12px); }
+      6.5%, 30% { opacity: 1; transform: translateY(0px); }
+      33.33%, 100% { opacity: 0; transform: translateY(-5px); }
+    }
+    @keyframes card2Anim {
+      0%, 35.83% { opacity: 0; transform: translateY(12px); }
+      39.83%, 63.33% { opacity: 1; transform: translateY(0px); }
+      66.66%, 100% { opacity: 0; transform: translateY(-5px); }
+    }
+    @keyframes card3Anim {
+      0%, 69.16% { opacity: 0; transform: translateY(12px); }
+      73.16%, 96.66% { opacity: 1; transform: translateY(0px); }
+      100% { opacity: 0; transform: translateY(-5px); }
+    }
+
+    /* Left Navigation Highlight Sync */
+    .tab-1 { animation: tab1Highlight 15s infinite; }
+    .tab-2 { animation: tab2Highlight 15s infinite; }
+    .tab-3 { animation: tab3Highlight 15s infinite; }
+
+    @keyframes tab1Highlight {
+      0%, 32% { fill: #ECFDF5; stroke: #009944; stroke-width: 1.8; }
+      33.33%, 100% { fill: #FFFFFF; stroke: #E2E8F0; stroke-width: 1; }
+    }
+    @keyframes tab2Highlight {
+      0%, 33.32% { fill: #FFFFFF; stroke: #E2E8F0; stroke-width: 1; }
+      33.33%, 65.33% { fill: #ECFDF5; stroke: #009944; stroke-width: 1.8; }
+      66.66%, 100% { fill: #FFFFFF; stroke: #E2E8F0; stroke-width: 1; }
+    }
+    @keyframes tab3Highlight {
+      0%, 66.65% { fill: #FFFFFF; stroke: #E2E8F0; stroke-width: 1; }
+      66.66%, 98.66% { fill: #ECFDF5; stroke: #009944; stroke-width: 1.8; }
+      100% { fill: #FFFFFF; stroke: #E2E8F0; stroke-width: 1; }
+    }
+
+    /* Progress Bar Fill Animation */
+    .progress-bar {
+      animation: progressFill 15s linear infinite;
+    }
+    @keyframes progressFill {
+      0% { width: 0px; }
+      33.33% { width: 170px; }
+      66.66% { width: 340px; }
+      100% { width: 510px; }
+    }
+  </style>
+
+  <!-- Main Outer Container -->
+  <rect x="1" y="1" width="918" height="438" rx="20" fill="url(#bgGrad)" stroke="#A7F3D0" stroke-width="1.5" />
+  <rect x="1" y="1" width="918" height="438" rx="20" fill="url(#dotGrid)" />
+
+  <!-- ==========================================
+       LEFT PANEL: BRAND & SCENE NAVIGATION
+       ========================================== -->
+  <g class="font-sans">
+    <!-- App Icon (Crisp Vector Reproduction of fitness-companion-icon-v1.png) -->
+    <g>
+      <!-- Crisp Vector Shadow -->
+      <rect x="32" y="36" width="64" height="64" rx="16" fill="#007A37" fill-opacity="0.18" />
+      <rect x="32" y="32" width="64" height="64" rx="16" fill="url(#brandGreen)" />
+      <!-- White Speech Bubble -->
+      <path d="M 64 44 C 49.5 44 40 52.5 40 64 C 40 69.5 42.8 74.2 47.2 77.5 L 44.5 85.5 L 53.5 81.2 C 56.8 82.4 60.3 83 64 83 C 78.5 83 88 74.5 88 63.5 C 88 52.5 78.5 44 64 44 Z"
+            fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Animated Dumbbell Inside Bubble -->
+      <g class="dumbbell-lift" fill="#FFFFFF">
+        <!-- Center Bar -->
+        <rect x="56" y="61.5" width="16" height="4" rx="1.5" />
+        <!-- Inner Plates -->
+        <rect x="52" y="55.5" width="5.5" height="16" rx="2.2" />
+        <rect x="70.5" y="55.5" width="5.5" height="16" rx="2.2" />
+        <!-- Outer Plates -->
+        <rect x="47.5" y="58" width="3.5" height="11" rx="1.5" />
+        <rect x="77" y="58" width="3.5" height="11" rx="1.5" />
+      </g>
+    </g>
+
+    <!-- Title & Tagline -->
+    <text x="110" y="60" font-size="22" font-weight="800" fill="#0F172A">练得明白</text>
+    <text x="110" y="82" font-size="13" font-weight="700" fill="#00873E" class="font-mono">Fitness Companion Skill</text>
+
+    <text x="32" y="122" font-size="13.5" font-weight="700" fill="#1E293B">不套大众模板，用中文聊清楚你的日常健身：</text>
+    <text x="32" y="143" font-size="12.5" fill="#64748B">训练编排 · 动作教学 · 外卖饮食 · 补剂与睡眠</text>
+
+    <!-- 3 Synchronized Scene Tabs -->
+    <!-- Tab 1 -->
+    <g>
+      <rect class="tab-1" x="32" y="164" width="290" height="62" rx="12" />
+      <circle cx="54" cy="195" r="12" fill="#009944" fill-opacity="0.12" />
+      <text x="54" y="199" text-anchor="middle" font-size="11" font-weight="700" fill="#00873E" class="font-mono">01</text>
+      <text x="76" y="189" font-size="14" font-weight="700" fill="#0F172A">独自训练 + 核对视频直达</text>
+      <text x="76" y="209" font-size="12" fill="#64748B">热身激活铺垫 · 器械设置与B站时间戳</text>
+    </g>
+
+    <!-- Tab 2 -->
+    <g>
+      <rect class="tab-2" x="32" y="238" width="290" height="62" rx="12" />
+      <circle cx="54" cy="269" r="12" fill="#009944" fill-opacity="0.12" />
+      <text x="54" y="273" text-anchor="middle" font-size="11" font-weight="700" fill="#00873E" class="font-mono">02</text>
+      <text x="76" y="263" font-size="14" font-weight="700" fill="#0F172A">突发状况随时改 · 零打卡焦虑</text>
+      <text x="76" y="283" font-size="12" fill="#64748B">加班缩时 / 器械被占 / 关节不适即刻替</text>
+    </g>
+
+    <!-- Tab 3 -->
+    <g>
+      <rect class="tab-3" x="32" y="312" width="290" height="62" rx="12" />
+      <circle cx="54" cy="343" r="12" fill="#009944" fill-opacity="0.12" />
+      <text x="54" y="347" text-anchor="middle" font-size="11" font-weight="700" fill="#00873E" class="font-mono">03</text>
+      <text x="76" y="337" font-size="14" font-weight="700" fill="#0F172A">外卖手掌估算 + 跨聊天接续</text>
+      <text x="76" y="357" font-size="12" fill="#64748B">不强制称重 · 打包进度带去新会话</text>
+    </g>
+
+    <!-- Bottom Motto Pill (Fits cleanly inside 290px column) -->
+    <rect x="32" y="386" width="290" height="28" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+    <text x="177" y="404" text-anchor="middle" font-size="11.5" font-weight="700" fill="#047857">“最佳的锻炼时间是什么时候？就是现在。”</text>
+  </g>
+
+  <!-- ==========================================
+       RIGHT PANEL: LIVE CHAT-TO-PLAN WINDOW
+       ========================================== -->
+  <g class="font-sans">
+    <!-- Crisp Vector Window Shadow & Frame -->
+    <rect x="350" y="30" width="542" height="388" rx="16" fill="#0F172A" fill-opacity="0.05" />
+    <rect x="348" y="26" width="542" height="388" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+
+    <!-- Window Header Bar -->
+    <path d="M 348 42 Q 348 26 364 26 L 874 26 Q 890 26 890 42 L 890 68 L 348 68 Z" fill="#F8FAFC" />
+    <line x1="348" y1="68" x2="890" y2="68" stroke="#E2E8F0" stroke-width="1" />
+
+    <!-- Window Controls -->
+    <circle cx="370" cy="47" r="5.5" fill="#FCA5A5" />
+    <circle cx="388" cy="47" r="5.5" fill="#FCD34D" />
+    <circle cx="406" cy="47" r="5.5" fill="#6EE7B7" />
+
+    <!-- Active Skill Pill in Header -->
+    <rect x="430" y="35" width="214" height="24" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+    <circle class="status-dot" cx="445" cy="47" r="4" fill="#009944" />
+    <text x="456" y="51" font-size="11.5" font-weight="700" fill="#065F46" class="font-mono">$fitness-companion</text>
+    <text x="595" y="51" font-size="11" font-weight="600" fill="#059669">· 已就绪</text>
+
+    <text x="872" y="51" text-anchor="end" font-size="11" fill="#94A3B8" class="font-mono">MIT · Agent Skill</text>
+
+    <!-- Progress Bar Track at Bottom of Window -->
+    <rect x="364" y="400" width="510" height="4" rx="2" fill="#F1F5F9" />
+    <rect class="progress-bar" x="364" y="400" width="170" height="4" rx="2" fill="#10B981" />
+
+    <!-- ==========================================
+         SCENE 1: TRAINING + VERIFIED TUTORIAL
+         ========================================== -->
+    <g class="scene-1">
+      <!-- User Prompt Bubble -->
+      <rect x="476" y="85" width="396" height="40" rx="14" fill="#047857" fill-opacity="0.15" />
+      <rect x="474" y="82" width="396" height="40" rx="14" fill="url(#userBubbleGrad)" />
+      <text x="492" y="107" font-size="13" font-weight="600" fill="#FFFFFF">“一周去三次健身房，上斜哑铃卧推总是肩膀酸？”</text>
+    </g>
+
+    <g class="card-1">
+      <!-- Agent Response Card -->
+      <rect x="368" y="136" width="502" height="252" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2" />
+
+      <!-- Card Header -->
+      <rect x="384" y="150" width="148" height="24" rx="6" fill="#ECFDF5" />
+      <text x="394" y="166" font-size="12" font-weight="700" fill="#047857">🏋️ 今日推日 · 独自训练</text>
+
+      <rect x="540" y="150" width="186" height="24" rx="6" fill="url(#warmGrad)" stroke="#FDE68A" stroke-width="1" />
+      <text x="550" y="166" font-size="11.5" font-weight="600" fill="#B45309">🔥 无热身不训练 · 无激活不训练</text>
+
+      <!-- Warmup Row -->
+      <rect x="384" y="184" width="470" height="36" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+      <text x="398" y="206" font-size="12.5" font-weight="700" fill="#334155">1. 低疲劳激活</text>
+      <text x="495" y="206" font-size="12.5" fill="#475569">弹力带肩袖外旋 2×12 + 轻重量找轨迹（不练到力竭）</text>
+
+      <!-- Main Exercise Row + Coaching Breakdown -->
+      <rect x="384" y="228" width="470" height="146" rx="10" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" />
+      <text x="398" y="252" font-size="13.5" font-weight="700" fill="#0F172A">2. 上斜哑铃卧推</text>
+      <text x="520" y="252" font-size="12.5" font-weight="700" fill="#059669" class="font-mono">4组 × 8-10次 · 休 90-120s · RIR 2</text>
+
+      <!-- Key Cues -->
+      <text x="398" y="278" font-size="12.5" fill="#334155">• <tspan font-weight="700" fill="#0F172A">器械设置：</tspan>凳子调 <tspan font-weight="700" fill="#047857">30° 左右</tspan>（太陡容易变成前束代偿酸痛）</text>
+      <text x="398" y="300" font-size="12.5" fill="#334155">• <tspan font-weight="700" fill="#0F172A">动作自查：</tspan>沉肩收胛，大臂与身体呈 <tspan font-weight="700" fill="#047857">45°–60°</tspan>，手肘微内收不外撇</text>
+      <text x="398" y="322" font-size="12.5" fill="#334155">• <tspan font-weight="700" fill="#0F172A">安全起止：</tspan>哑铃先放腿上借力顶起，结束时屈膝接回，不硬甩</text>
+
+      <!-- Verified Bilibili Link Row (Separate Line as required by Skill) -->
+      <rect x="398" y="336" width="440" height="28" rx="6" fill="url(#biliGrad)" stroke="#BAE6FD" stroke-width="1" />
+      <text x="410" y="354" font-size="12" font-weight="600" fill="#0369A1">▶ 已核对教学：谭成义 · 上斜哑铃卧推（00:32 调角度 / 01:15 下放轨迹）</text>
+    </g>
+
+    <!-- ==========================================
+         SCENE 2: ON-THE-FLY 30-MIN ADAPTATION
+         ========================================== -->
+    <g class="scene-2">
+      <!-- User Prompt Bubble -->
+      <rect x="466" y="85" width="404" height="40" rx="14" fill="#047857" fill-opacity="0.15" />
+      <rect x="464" y="82" width="406" height="40" rx="14" fill="url(#userBubbleGrad)" />
+      <text x="482" y="107" font-size="13" font-weight="600" fill="#FFFFFF">“今天加班只有 30 分钟，而且哑铃区全满怎么办？”</text>
+    </g>
+
+    <g class="card-2">
+      <!-- Agent Response Card -->
+      <rect x="368" y="136" width="502" height="252" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2" />
+
+      <!-- Card Header -->
+      <rect x="384" y="150" width="196" height="24" rx="6" fill="#ECFDF5" />
+      <text x="394" y="166" font-size="12" font-weight="700" fill="#047857">⚡ 30分钟省时版 · 即刻调整</text>
+
+      <rect x="588" y="150" width="174" height="24" rx="6" fill="#F1F5F9" />
+      <text x="598" y="166" font-size="11.5" font-weight="600" fill="#475569">✓ 不补练 · 不设打卡惩罚</text>
+
+      <!-- Adjusted Step 1 -->
+      <rect x="384" y="186" width="470" height="44" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+      <text x="398" y="206" font-size="13" font-weight="700" fill="#0F172A">1. 精简热身与肩袖激活（5 分钟）</text>
+      <text x="398" y="223" font-size="12" fill="#64748B">保留关节热身 + 空手肩胛滑动，时间再紧也不直接推大重量</text>
+
+      <!-- Adjusted Step 2 -->
+      <rect x="384" y="238" width="470" height="48" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" />
+      <text x="398" y="259" font-size="13" font-weight="700" fill="#0F172A">2. 坐姿器械推胸（替代哑铃卧推）</text>
+      <text x="640" y="259" font-size="12" font-weight="700" fill="#059669" class="font-mono">3组 × 10-12次 · 休 75s</text>
+      <text x="398" y="277" font-size="12" fill="#475569">免找哑铃免装片，握距略宽于肩，推起呼气、控制离心回放</text>
+
+      <!-- Adjusted Step 3 -->
+      <rect x="384" y="294" width="470" height="44" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+      <text x="398" y="314" font-size="13" font-weight="700" fill="#0F172A">3. 坐姿器械划船（全身必练拉类）</text>
+      <text x="640" y="314" font-size="12" font-weight="700" fill="#059669" class="font-mono">3组 × 10-12次 · 休 75s</text>
+      <text x="398" y="330" font-size="12" fill="#64748B">孤立小肌群今日暂省，完成这两项核心推拉即可安心下班休息</text>
+
+      <!-- Safety Note Footer -->
+      <rect x="384" y="346" width="470" height="30" rx="6" fill="#ECFDF5" />
+      <text x="398" y="365" font-size="12" font-weight="600" fill="#065F46">💬 练完告诉我体感即可，下次自动切回常规 60 分钟计划。</text>
+    </g>
+
+    <!-- ==========================================
+         SCENE 3: TAKEOUT NUTRITION + CONTINUATION
+         ========================================== -->
+    <g class="scene-3">
+      <!-- User Prompt Bubble -->
+      <rect x="446" y="85" width="424" height="40" rx="14" fill="#047857" fill-opacity="0.15" />
+      <rect x="444" y="82" width="426" height="40" rx="14" fill="url(#userBubbleGrad)" />
+      <text x="462" y="107" font-size="13" font-weight="600" fill="#FFFFFF">“平时只吃外卖怎么搭？另外帮我整理份接续记录。”</text>
+    </g>
+
+    <g class="card-3">
+      <!-- Agent Response Card -->
+      <rect x="368" y="136" width="502" height="252" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2" />
+
+      <!-- Sub-card A: Takeout Nutrition -->
+      <rect x="384" y="150" width="470" height="106" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" />
+      <rect x="398" y="162" width="166" height="22" rx="5" fill="#ECFDF5" />
+      <text x="406" y="177" font-size="12" font-weight="700" fill="#047857">🍱 外卖日常估算（免称重）</text>
+      <text x="576" y="177" font-size="11.5" fill="#64748B">补剂：日常吃够无需必买蛋白粉</text>
+
+      <text x="398" y="202" font-size="12.5" fill="#334155">• <tspan font-weight="700" fill="#0F172A">每餐锚点：</tspan><tspan font-weight="700" fill="#047857">1 平碗</tspan>熟米饭 + <tspan font-weight="700" fill="#047857">1.5 掌心</tspan>瘦肉/去皮禽肉 + <tspan font-weight="700" fill="#047857">2 拳</tspan>少油蔬菜</text>
+      <text x="398" y="224" font-size="12.5" fill="#334155">• <tspan font-weight="700" fill="#0F172A">外卖避坑：</tspan>麻辣烫/盖饭汤汁油糖高，备注“少油少酱、汤菜分离”</text>
+      <text x="398" y="245" font-size="12" fill="#64748B">• 偶尔聚餐吃多无需挨饿加练，下一顿恢复正常三餐即可</text>
+
+      <!-- Sub-card B: Portable Continuation Record -->
+      <rect x="384" y="266" width="470" height="108" rx="10" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" />
+      <rect x="398" y="278" width="194" height="22" rx="5" fill="#ECFDF5" />
+      <text x="406" y="293" font-size="12" font-weight="700" fill="#047857">📋 跨聊天接续记录（可复制）</text>
+      <text x="604" y="293" font-size="11.5" fill="#64748B">不自动建档 · 隐私由你掌控</text>
+
+      <rect x="398" y="306" width="442" height="56" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="410" y="325" font-size="11.5" fill="#334155" class="font-mono">[目标] 增肌减脂兼顾 · 每周3练(推/拉/腿) · 默认独自训练</text>
+      <text x="410" y="343" font-size="11.5" fill="#334155" class="font-mono">[记录] 上斜哑铃卧推凳调30°后肩酸消失；外卖按碗/掌心执行</text>
+      <text x="410" y="357" font-size="11" font-weight="600" fill="#059669">→ 复制发到新聊天：“用 fitness-companion 按这份记录继续”</text>
+    </g>
+  </g>
+</svg>
