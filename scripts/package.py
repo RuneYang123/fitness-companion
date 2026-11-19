@@ -19,6 +19,10 @@ EXCLUDED = {'dist', '.git', '__pycache__', '.DS_Store'}
 ROOT_FILES = {'README.md', 'LICENSE', 'NOTICE.md', '.gitignore', 'CONTRIBUTING.md', 'CHANGELOG.md'}
 REPOSITORY_FILES = {
     'docs/publishing.md', 'docs/fitness-companion-banner.svg', 'scripts/package.py', 'tests/test_package.py',
+    'docs/sources/source-audit.md', 'docs/sources/teaching-catalog.md', 'docs/sources/media-and-rights.md',
+    'docs/sources/source-notes/胸部.md', 'docs/sources/source-notes/背部.md',
+    'docs/sources/source-notes/肩部与手臂.md', 'docs/sources/source-notes/下肢与核心.md',
+    'docs/sources/source-notes/训练思路与恢复.md',
     '.github/ISSUE_TEMPLATE/bug_report.yml',
     '.github/ISSUE_TEMPLATE/feature_request.yml',
     '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/validate.yml',

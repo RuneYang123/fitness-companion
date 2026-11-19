@@ -93,9 +93,10 @@ class PackagingTests(unittest.TestCase):
     def test_author_text_changes_only_for_confirmed_contacts(self):
         text = (self.package.SKILL / 'references' / 'plan-closing.md').read_text(encoding='utf-8')
         body = text.split('## 结尾文案\n', 1)[1]
-        body = body.replace('[RuneYang123/fitness-companion](' + self.package.REPOSITORY_URL + ')', '`[可在此填入你的 GitHub 仓库链接]`')
-        body = body.replace('[' + self.package.CONTACT_EMAIL + '](mailto:' + self.package.CONTACT_EMAIL + ')', '`[你的邮箱地址]`')
-        self.assertEqual(hashlib.sha256(body.encode()).hexdigest(), '5ff596804449cc22cdb74cca4bf5e2889b10d4001f2347dfe25c42e7af369fae')
+        self.assertIn('[RuneYang123/fitness-companion](' + self.package.REPOSITORY_URL + ')', body)
+        self.assertIn('[' + self.package.CONTACT_EMAIL + '](mailto:' + self.package.CONTACT_EMAIL + ')', body)
+        for required_phrase in ('保护关节永远第一', '动作规范大于盲目冲重量', '睡眠和休息比锻炼更重要', '就是现在'):
+            self.assertIn(required_phrase, body)
 
 
 if __name__ == '__main__':

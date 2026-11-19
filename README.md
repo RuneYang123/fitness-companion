@@ -34,52 +34,29 @@ Fitness Companion is a Chinese-language fitness skill for adults, tailoring trai
 
 ## 安装
 
-这是一个文件形式的 Skill，不是独立App、网站或付费服务。需要支持 Agent Skills 的智能体读取 `SKILL.md` 和参考资料。
+这是一个遵循 [Agent Skills 规范](https://agentskills.io/specification) 的 Skill，适用于支持 Agent Skills 的各类智能体。纯文本使用不需要 API 密钥、额外 Python 依赖、MCP 或定时任务；联网核验和照片反馈由智能体宿主能力决定。
 
-目录结构遵循 [Agent Skills 规范](https://agentskills.io/specification)。联网核验和照片反馈由宿主能力决定；纯文本使用不需要API密钥、额外Python依赖、MCP或定时任务。
+### 方式一：让智能体直接安装（推荐）
 
-### Codex：手动安装
+直接复制下面这句话发给你的智能体：
 
-先下载并解压仓库，或克隆后进入目录：
-
-```sh
-git clone https://github.com/RuneYang123/fitness-companion.git
-cd fitness-companion
+```text
+请帮我从 https://github.com/RuneYang123/fitness-companion 安装 fitness-companion 这个 Skill（将仓库中的 skills/fitness-companion 目录完整复制到你的 skills 目录中）。
 ```
 
-在仓库根目录执行以下首次安装命令（macOS/Linux）。如果已经安装同名Skill，先比较或备份，不直接覆盖：
+### 方式二：手动安装
 
-```sh
-mkdir -p ~/.agents/skills
-cp -R skills/fitness-companion ~/.agents/skills/
-```
-
-项目内使用也可复制到目标项目的 `.agents/skills/fitness-companion/`。已有同名安装时先比较或备份再替换。不要只复制 `SKILL.md`，整个文件夹里的 `references/`、许可和来源声明都要保留。
-
-Windows PowerShell首次安装：
-
-```powershell
-New-Item -ItemType Directory -Force "$HOME\.agents\skills" | Out-Null
-Copy-Item -Recurse ".\skills\fitness-companion" "$HOME\.agents\skills\fitness-companion"
-```
-
-当前目录约定参考[OpenAI官方Skills文档](https://learn.chatgpt.com/docs/build-skills)。某些旧版本或客户端可能使用不同目录，以客户端当前说明为准。Codex会自动发现Skill变更；没显示时重启客户端，并检查整个文件夹是否复制完整。
-
-### 其他支持 Agent Skills 的工具
-
-将 `skills/fitness-companion/` 完整复制到该工具支持的Skill目录，按其加载方式启用。核心说明未绑定特定工具API；`agents/openai.yaml` 是可选的Codex界面元数据。
-
-本版本已完成结构、文件引用、图标引用和封装完整性检查，并在同一聊天中走过信息收集、训练、饮食、补剂、睡眠和流程收尾。尚未逐个客户端、独立新会话或不同模型验证，不宣称所有智能体产生相同回答；照片分析和视频播放能力取决于宿主及原站。
+下载或克隆本仓库后，将 `skills/fitness-companion/` 整个文件夹（不要只复制单个 `SKILL.md`，需保留 `references/`、许可和来源声明等全部文件）复制到你所用智能体的 Skills 目录中即可（例如 `~/.agents/skills/fitness-companion` 或项目内的 `.agents/skills/fitness-companion`）。
 
 ## 开始使用
 
-在支持显式调用的客户端中：
+安装完成后，可以在对话中显式点名调用，也可以直接按自然语言提问：
 
 ```text
-用 $fitness-companion 帮我安排训练，先问最必要的信息。
+用 fitness-companion 帮我安排训练，先问最必要的信息。
 ```
 
-也可以自然地说：
+常见问法示例：
 
 - “我想兼顾增肌减脂，每周去健身房三次。”
 - “今天只有半小时，帮我调整原来的训练。”
@@ -87,18 +64,16 @@ Copy-Item -Recurse ".\skills\fitness-companion" "$HOME\.agents\skills\fitness-co
 - “上斜哑铃卧推怎么做？”
 - “我最近入睡有点慢，先简单问我一下作息。”
 
-已提供的资料不重复问。不想看完整计划时，直接说“只看今天”或“只讲这个动作”。
+不想看完整计划时，直接说“只看今天”或“只讲这个动作”。
 
-所需模块看完后，先正常输出当前模块，提供继续修改或先按这版执行、整理最终清单的选择。用户选择最终清单或明确采用整份计划后，再在同一回复中给具体总清单和作者结尾，只保留实际选择过的模块；日常问答不重复整份计划和长结尾。
-
-要换聊天或换智能体时，可以说“帮我整理一份接续记录”，再把记录发到新聊天，并说“用 fitness-companion 按这份记录继续，不用重新制定计划”。新宿主需能使用该Skill；记录本身也会保留具体清单，不只写计划名称。接续依据是用户提供的资料，不保证能自动读取旧聊天。默认在聊天中给文本，用户选择后才导出文件；个人记录单独保存，不放进公开Skill或仓库。
+需要换聊天窗口或换其他智能体接着用时，直接说**“帮我整理一份接续记录”**，再把生成的记录发到新聊天中即可无缝继续，不用重新制定计划。
 
 ## 数据、来源和使用边界
 
 - 本地封装目录不包含任何真实用户健康资料、私人付费计划、餐照、训练记录或本地视频缓存。
 - Skill不会主动创建个人档案或自动提醒。主动写入、导出健康记录前应征求用户选择；聊天平台自身如何保存内容，取决于平台设置，Skill不能替平台承诺。
 - 没有内置动作数据API，也尚未接入 exercises-dataset。参考资料里的原站链接和证据，不等于已获得第三方媒体再分发许可。
-- 16份具体动作教学、35条B站来源的整理采用机器转写与关键画面对照，非逐字人工听审，也非专业动作评审；来源核对日期保留在资料中。搜索入口不计为已核对视频。
+- 23份具体动作教学（含18项已核对的本人B站直达片段与5项通用基础动作卡）、35条B站来源的整理采用机器转写与关键画面对照，非逐字人工听审，也非专业动作评审；逐条来源与取舍记录见[来源与教学审计说明](docs/sources/source-audit.md)。搜索入口不计为已核对视频。
 - 它帮助制定与讨论日常安排，不诊断疾病、不代替现场保护或医疗治疗。特殊人群、异常症状和治疗性补充需另行处理。
 
 来源与许可边界见 [NOTICE](NOTICE.md)。项目原创说明与工具采用 [MIT](LICENSE)，第三方视频、图片、论文及其原文不在本项目许可授予范围内。
